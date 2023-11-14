@@ -1,0 +1,30 @@
+{
+    "author": "Suyog Pandit",
+    "name": ".npExtras",
+    "description": "With this extension, you can get more .np domain extensions which were hidden by the registrar for some reason",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "scripting",
+        "storage",
+        "activeTab"
+    ],
+    "icons": {
+        "40": "icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://register.com.np/*"
+            ],
+            "js": [
+                "./content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
